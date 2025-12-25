@@ -12,7 +12,7 @@ public class ChangeSet
     public required int UserId { get; init; }
     public required string Reason { get; init; }
 
-    private List<EntityChange> _entityChanges = new();
+    private readonly List<EntityChange> _entityChanges = new();
     public IReadOnlyList<EntityChange> EntityChanges => _entityChanges.AsReadOnly();
     
     public void AddEntityChange(EntityChange entityChange)
@@ -21,18 +21,8 @@ public class ChangeSet
     }
 
     #endregion
-
-    #region Constructors
     
-    public ChangeSet()
-    {
-        _entityChanges = new List<EntityChange>();
-    }
-
-
-    #endregion
-
-    #region Methods
+    #region Methodsß
 
     public override string ToString()
     {

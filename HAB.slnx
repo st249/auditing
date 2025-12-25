@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Tests/">
+    <Project Path="HAB.Auditing.Tests\HAB.Auditing.Tests.csproj" Type="Classic C#" />
+  </Folder>
   <Project Path="HAB.Auditing.Console/HAB.Auditing.Console.csproj" />
   <Project Path="HAB.Auditing/HAB.Auditing.csproj" />
 </Solution>

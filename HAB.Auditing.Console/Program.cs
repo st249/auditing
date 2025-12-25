@@ -15,6 +15,7 @@ var entityChange = new EntityChange()
     EntityId = "1"
 };
 
+
 var entityChange2 = new EntityChange()
 {
     EntityName = "Roles",
@@ -25,7 +26,8 @@ var propertyChange = new PropertyChange()
 {
     PropertyName = "Name",
     OldValue = "Admin",
-    NewValue = "Hassan"
+    NewValue = "Hassan",
+    PropertyType = "System.String"
 };
 
 
@@ -33,7 +35,8 @@ var propertyChange2 = new PropertyChange()
 {
     PropertyName = "CreationTime",
     OldValue = "",
-    NewValue = DateTime.UtcNow.ToString("yy-MMM-dd dddd HH:mm:ss")
+    NewValue = DateTime.UtcNow.ToString("yy-MMM-dd dddd HH:mm:ss"),
+    PropertyType = "System.DateTime"
 };
 
 entityChange.AddPropertyChange(propertyChange);
