@@ -1,0 +1,6 @@
+@HAB.Auditing.WebApiSample_HostAddress = http://localhost:5295
+
+GET {{HAB.Auditing.WebApiSample_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
