@@ -3,7 +3,7 @@ public class PropertyChange
 {
 
     #region Properties
-    
+    public long Id { get; private set; }
     public required string PropertyName { get; set; }
     public required string PropertyType { get; set; }
     public required string OldValue { get; set; }

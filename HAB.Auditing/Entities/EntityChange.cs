@@ -3,21 +3,17 @@ namespace HAB.Auditing.Entities;
 public class EntityChange
 {
     #region Properties
-
+    public long Id { get; private set; }
     public required string EntityName { get; init; } = "";
     public required string EntityId { get; init; } = "";
+    public required ChangeType ChangeType { get; init; } = ChangeType.UnChanged;
 
-    private readonly List<PropertyChange> _propertyChanges;
+    private readonly List<PropertyChange> _propertyChanges = new();
     public IReadOnlyList<PropertyChange> PropertyChanges => _propertyChanges.AsReadOnly();
 
     #endregion
 
     #region Methods
-
-    public EntityChange()
-    {
-        _propertyChanges = new List<PropertyChange>();
-    }
 
     public EntityChange AddPropertyChange(PropertyChange propertyChange)
     {

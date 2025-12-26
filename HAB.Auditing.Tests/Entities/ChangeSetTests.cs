@@ -11,7 +11,7 @@ public class ChangeSetTests
         var changeSet = new ChangeSet
         {
             ChangeTime = DateTime.UtcNow,
-            UserId = 42,
+            UserId = "42",
             Reason = "Test Reason",
             ChangedBy = "tester",
             BrowserInfo = "Safari",
@@ -21,7 +21,8 @@ public class ChangeSetTests
         var entityChange = new EntityChange
         {
             EntityId = "1",
-            EntityName = "TestEntity"
+            EntityName = "TestEntity",
+            ChangeType = ChangeType.Added
         };
 
         var propertyChange1 = new PropertyChange
@@ -49,7 +50,7 @@ public class ChangeSetTests
         // Assert
         Assert.NotNull(changeSet);
         Assert.Equal("Test Reason", changeSet.Reason);
-        Assert.Equal(42, changeSet.UserId);
+        Assert.Equal("42", changeSet.UserId);
         Assert.Equal("tester", changeSet.ChangedBy);
         Assert.Equal("Safari", changeSet.BrowserInfo);
         Assert.Equal("127.0.0.1", changeSet.ClientIp);

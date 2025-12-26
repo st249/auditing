@@ -2,6 +2,8 @@
   <Folder Name="/Tests/">
     <Project Path="HAB.Auditing.Tests\HAB.Auditing.Tests.csproj" Type="Classic C#" />
   </Folder>
-  <Project Path="HAB.Auditing.Console/HAB.Auditing.Console.csproj" />
+  <Project Path="HAB.Auditing.AspnetCore\HAB.Auditing.AspnetCore.csproj" Type="Classic C#" />
+  <Project Path="HAB.Auditing.EntityFramework\HAB.Auditing.EntityFramework.csproj" Type="Classic C#" />
+  <Project Path="HAB.Auditing.WebApiSample\HAB.Auditing.WebApiSample.csproj" Type="Classic C#" />
   <Project Path="HAB.Auditing/HAB.Auditing.csproj" />
 </Solution>

@@ -141,3 +141,4 @@ src/BookHouse.BCS.Web.Public/wwwroot/Common/**/*.min.*
 src/BookHouse.BCS.Web.Public/node_modules
 /src/BookHouse.BCS.Web.Public/node_modules
 
+/.idea
