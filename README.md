@@ -14,6 +14,8 @@ The project is designed to:
 
 This guide shows how to enable auditing and entity change tracking in an ASP.NET Core application using Entity Framework Core.
 
+You can also use the sample project in the repository. 
+
 ---
 
 ## 📦 Installation
