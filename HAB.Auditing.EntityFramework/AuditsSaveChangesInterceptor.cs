@@ -12,9 +12,9 @@ public class AuditsSaveChangesInterceptor(IAuditInfoProvider infoProvider) : Sav
         InterceptionResult<int> result,
         CancellationToken cancellationToken = new CancellationToken())
     {
-        if(!infoProvider.ShouldAudit)
+        if (!infoProvider.ShouldAudit)
             return await base.SavingChangesAsync(eventData, result, cancellationToken);
-        
+
         var context = eventData.Context;
         if (context == null) return await base.SavingChangesAsync(eventData, result, cancellationToken);
 
@@ -36,11 +36,12 @@ public class AuditsSaveChangesInterceptor(IAuditInfoProvider infoProvider) : Sav
 
         foreach (var entry in entries)
         {
+            var changeType = MapState(entry.State);
             var ec = new EntityChange
             {
                 EntityName = entry.Entity.GetType().Name,
-                ChangeType = MapState(entry.State),
-                EntityId = FindPrimaryKeyValue(entry)
+                ChangeType = changeType,
+                EntityId = changeType != ChangeType.Added ? FindPrimaryKeyValue(entry) : ""
             };
             var propertiesChanges = GetChangeProperties(entry);
             foreach (var propChange in propertiesChanges)
@@ -58,7 +59,7 @@ public class AuditsSaveChangesInterceptor(IAuditInfoProvider infoProvider) : Sav
 
             changeSet.AddEntityChange(ec);
         }
-        
+
         context.Add(changeSet);
         return await base.SavingChangesAsync(eventData, result, cancellationToken);
     }
