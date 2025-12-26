@@ -3,8 +3,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HAB.Auditing.EntityFramework.Context;
 
-public class AuditingDbContext(DbContextOptions options) : DbContext(options)
+public class AuditingDbContext : DbContext
 {
+    public AuditingDbContext(DbContextOptions options) : base(options)
+    {
+    }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -13,5 +17,5 @@ public class AuditingDbContext(DbContextOptions options) : DbContext(options)
             t => t.GetInterfaces().Any(i =>
                 i.IsGenericType &&
                 i.GetGenericTypeDefinition() == typeof(IEntityTypeConfiguration<>)));
-    }  
+    }
 }

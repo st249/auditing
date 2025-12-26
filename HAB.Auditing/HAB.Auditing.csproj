@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>HAB.Auditing</PackageId>
@@ -11,7 +11,7 @@
     <Description>
       This contract is for the core auditing functionality of HAB-Circleteam applications.
     </Description>
-    <PackageVersion>10.0.0</PackageVersion>
+    <PackageVersion>6.0.0</PackageVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/st249/auditing</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/st249/auditing/blob/main/LICENSE</PackageLicenseUrl>

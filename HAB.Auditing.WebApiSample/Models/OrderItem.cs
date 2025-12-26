@@ -5,7 +5,7 @@ public class OrderItem
     public int Id { get; private set; }
     public int OrderId { get; private set; }
     public Order Order { get; private set; }
-    public required string ProductName { get; init; }
+    public string ProductName { get; init; }
     public int Quantity { get; private set; }
     public decimal UnitPrice { get; private set; }
     public decimal Discount { get; private set; }

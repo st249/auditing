@@ -8,9 +8,12 @@ namespace HAB.Auditing.AspnetCore.Attributes;
 
 
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
-public sealed class AuditingAttribute() : TypeFilterAttribute(typeof(HabAuditingFilter))
+public sealed class AuditingAttribute : TypeFilterAttribute
 {
-    
+    public AuditingAttribute():base(typeof(HabAuditingFilter))
+    {
+        
+    }
 }
 public class HabAuditingFilter : IAsyncActionFilter
 {

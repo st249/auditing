@@ -4,10 +4,10 @@ public class PropertyChange
 
     #region Properties
     public long Id { get; private set; }
-    public required string PropertyName { get; set; }
-    public required string PropertyType { get; set; }
-    public required string OldValue { get; set; }
-    public required string NewValue { get; set; }
+    public string PropertyName { get; set; }
+    public string PropertyType { get; set; }
+    public string OldValue { get; set; }
+    public string NewValue { get; set; }
     
     #endregion
     

@@ -5,7 +5,6 @@ using HAB.Auditing.WebApiSample;
 using HAB.Auditing.WebApiSample.AuditingCustoms;
 using HAB.Auditing.WebApiSample.Context;
 using Microsoft.EntityFrameworkCore;
-using Scalar.AspNetCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,8 +14,7 @@ IWebHostEnvironment env = builder.Environment;
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+
 
 //Adding auditing services
 builder.Services.AddAuditing<CustomAuditInfoProvider>();
@@ -36,8 +34,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
-    app.MapScalarApiReference();
+
 }
 
 InitializeDatabase(app);

@@ -6,8 +6,15 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace HAB.Auditing.EntityFramework;
 
-public class AuditsSaveChangesInterceptor(IAuditInfoProvider infoProvider) : SaveChangesInterceptor
+public class AuditsSaveChangesInterceptor : SaveChangesInterceptor
 {
+    private readonly IAuditInfoProvider infoProvider;
+
+    public AuditsSaveChangesInterceptor(IAuditInfoProvider infoProvider)
+    {
+        this.infoProvider = infoProvider;
+    }
+
     public override async ValueTask<InterceptionResult<int>> SavingChangesAsync(DbContextEventData eventData,
         InterceptionResult<int> result,
         CancellationToken cancellationToken = new CancellationToken())

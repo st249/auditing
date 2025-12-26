@@ -4,9 +4,9 @@ public class EntityChange
 {
     #region Properties
     public long Id { get; private set; }
-    public required string EntityName { get; init; } = "";
-    public required string EntityId { get; init; } = "";
-    public required ChangeType ChangeType { get; init; } = ChangeType.UnChanged;
+    public string EntityName { get; init; } = "";
+    public string EntityId { get; init; } = "";
+    public ChangeType ChangeType { get; init; } = ChangeType.UnChanged;
 
     private readonly List<PropertyChange> _propertyChanges = new();
     public IReadOnlyList<PropertyChange> PropertyChanges => _propertyChanges.AsReadOnly();

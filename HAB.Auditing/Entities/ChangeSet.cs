@@ -6,12 +6,12 @@ public class ChangeSet
     #region Properties
     
     public int Id { get; set; }
-    public required DateTime ChangeTime { get; init; }
+    public DateTime ChangeTime { get; init; }
     public string? BrowserInfo { get; init; } = "";
     public string? ClientIp { get; init; } = "";
     public string? ChangedBy { get; init; }
-    public required string UserId { get; init; }
-    public required string Reason { get; init; }
+    public string UserId { get; init; }
+    public string Reason { get; init; }
 
     private readonly List<EntityChange> _entityChanges = new();
     public IReadOnlyList<EntityChange> EntityChanges => _entityChanges.AsReadOnly();

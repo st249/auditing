@@ -5,8 +5,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HAB.Auditing.WebApiSample.Context;
 
-public class SampleDbContext(DbContextOptions<SampleDbContext> options) : AuditingDbContext(options)
+public class SampleDbContext : AuditingDbContext
 {
+    public SampleDbContext(DbContextOptions<SampleDbContext> options):base(options)
+    {
+        
+    }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(

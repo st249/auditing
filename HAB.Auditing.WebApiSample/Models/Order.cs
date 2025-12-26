@@ -5,7 +5,7 @@ namespace HAB.Auditing.WebApiSample.Models;
 public class Order
 {
     public int Id { get; private set; }
-    public required string CustomerName { get; init; } 
+    public string CustomerName { get; init; } 
     public DateTime OrderDate { get; private set; } = DateTime.UtcNow;
 
     public int TotalQuantity

@@ -9,8 +9,17 @@ using Microsoft.Extensions.Logging;
 
 namespace HAB.Auditing.AspnetCore.Implementations;
 
-public class HabAuditingFilter(IAuditInfoProvider provider, ILogger<HabAuditingFilter> logger) : IAsyncActionFilter
+public class HabAuditingFilter : IAsyncActionFilter
 {
+    private readonly IAuditInfoProvider provider;
+    private readonly ILogger<HabAuditingFilter> logger;
+
+    public HabAuditingFilter(IAuditInfoProvider provider, ILogger<HabAuditingFilter> logger)
+    {
+        this.provider = provider;
+        this.logger = logger;
+    }
+
     public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
     {
         var hasAudit = false;

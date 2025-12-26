@@ -4,8 +4,14 @@ using Microsoft.AspNetCore.Http;
 
 namespace HAB.Auditing.AspnetCore.Implementations;
 
-public class DefaultHttpContextAuditInfoProvider(IHttpContextAccessor http) : BaseAuditInfoProvider, IAuditInfoProvider
+public class DefaultHttpContextAuditInfoProvider : BaseAuditInfoProvider, IAuditInfoProvider
 {
+    private readonly IHttpContextAccessor http;
+
+    public DefaultHttpContextAuditInfoProvider(IHttpContextAccessor http)
+    {
+        this.http = http;
+    }
 
     public override string GetUserId()
     {

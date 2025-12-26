@@ -2,8 +2,15 @@ using HAB.Auditing.AspnetCore.Implementations;
 
 namespace HAB.Auditing.WebApiSample.AuditingCustoms;
 
-public class CustomAuditInfoProvider(IHttpContextAccessor http) : BaseAuditInfoProvider
+public class CustomAuditInfoProvider : BaseAuditInfoProvider
 {
+    private readonly IHttpContextAccessor http;
+
+    public CustomAuditInfoProvider(IHttpContextAccessor http)
+    {
+        this.http = http;
+    }
+
     public override string GetUserId()
     {
         var ctx = http.HttpContext;
