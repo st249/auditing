@@ -12,6 +12,10 @@
             This contract is for the aspnet core auditing functionality of HAB-Circleteam applications.
         </Description>
         <PackageVersion>10.0.0</PackageVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageProjectUrl>https://github.com/st249/auditing</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/st249/auditing/blob/main/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/st249/auditing</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
